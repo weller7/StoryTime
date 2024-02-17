@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+
+    <h1>Name</h1>
+    <ul>
+    <% names.forEach( el => { %>
+            <li class='nameItem' data-id='<%=el._id%>'>
+                <span class='<%= el.given === true ? 'given' : 'not'%>'><%= el.name %></span>
+                <span class='del'> Delete </span>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <h3><%= user.userName %> has <%= left %> possible names left. </h3>
+
+    <form action="/nameLists/addName" method='POST'>
+        <input type="text" placeholder="Enter Name" name='nameItem'>
+        <input type="submit">
+    </form>
+
+    <a href="/logout">Logout</a>
+
+    <script src="/js/main.js"></script>
+
+<%- include('partials/footer') -%>

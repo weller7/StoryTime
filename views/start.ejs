@@ -1,0 +1,77 @@
+<%- include('partials/header') -%>
+
+  <body>
+
+
+    <div class="b-example-divider"></div>
+
+    <div class="container px-4 py-5">
+      <h2 class="pb-2 border-bottom">Your stories start here</h2>
+
+      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-3 py-3">
+        <div class="col d-flex flex-column align-items-start gap-2">
+          <h2 class="fw-bold text-body-emphasis">Welcome to Story Time</h2>
+          <p class="text-body-secondary">The place were stories come alive.</p>
+
+
+        </div>
+
+        <div class="col">
+          <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <div class="col d-flex flex-column gap-2">
+              <div
+                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#collection" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Story</h4>
+              <p class="text-body-secondary">Use our editor to write your story and publish it here.</p>
+              <a href="/stories" class="btn btn-primary btn-sm">Write story</a>
+            </div>
+
+            <div class="col d-flex flex-column gap-2">
+              <div
+                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#gear-fill" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Story outline</h4>
+              <p class="text-body-secondary">Think about your next story and write its plot points.</p>
+              <a href="/outlines" class="btn btn-primary btn-sm">Create outline</a>
+            </div>
+
+            <div class="col d-flex flex-column gap-2">
+              <div
+                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#speedometer" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Name list</h4>
+              <p class="text-body-secondary">Save your favorite names and use them for your characters.</p>
+              <a href="/nameLists" class="btn btn-primary btn-sm">Create list</a>
+
+            </div>
+
+            <div class="col d-flex flex-column gap-2">
+              <div
+                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#table" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Character</h4>
+              <p class="text-body-secondary">Create a character for your next story.</p>
+              <a href="/characters" class="btn btn-primary btn-sm">Create character</a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <%- include('partials/footer') -%>

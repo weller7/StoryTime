@@ -1,0 +1,61 @@
+<%- include('partials/header') -%>
+
+<div class="container px-2 py-3">
+
+    <h1><%= outline.titleOfOutline %> </h1>
+
+    <ul>
+    <% plotPoints.forEach( el => { %>
+            <li class='plotPointItem mt-2 mb-2' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.plotPoint %></span>
+            
+                <span class="side">
+                    <form
+                    class="col-1"
+                    action="/plotPoints/markPlotPointComplete/<%=el._id%>?_method=PUT"
+                    method="POST"
+                  >
+                    <button class="btn btn-primary fa fa-check fa-xs" type="submit"></button>
+                  </form>
+                </span>
+
+                <span class="side">
+                    <form
+                    class="col-1"
+                    action="/plotPoints/markPlotPointIncomplete/<%=el._id%>?_method=PUT"
+                    method="POST"
+                  >
+                    <button class="btn btn-primary fa fa-square fa-xs" type="submit"></button>
+                  </form>
+                </span>
+
+                <span class="side">
+                    <form
+                    class="col-1"
+                    action="/plotPoints/deletePlotPoint/<%=el._id%>?_method=DELETE"
+                    method="POST"
+                  >
+                    <button class="btn btn-primary fa fa-trash fa-xs" type="submit"></button>
+                  </form>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <div class="mt-5">
+
+    <h4><%= user.userName %> has <%= left %> plot points to write. </h4>
+
+    <form action="/plotPoints/addPlotPoint/<%=outline._id%>" method='POST'>
+        <input type="text" placeholder="Enter plot point" name='plotPointItem'>
+        <input type="submit">
+    </form>
+
+    <a href="/logout">Logout</a>
+    <a href="/outlines">Outlines</a>
+    </div>
+
+    <script src="/js/main.js"></script>
+</div>
+
+
+<%- include('partials/footer') -%>

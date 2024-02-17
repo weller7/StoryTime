@@ -1,0 +1,62 @@
+<%- include('partials/header') -%>
+
+<div class="container px-2 py-3">
+
+
+    <h1><%= nameList.titleOfNameList %> </h1>
+    <ul>
+    <% names.forEach( el => { %>
+            <li  class='nameItem mt-2 mb-2' data-id='<%=el._id%>'>
+                <span class='<%= el.given === true ? 'given' : 'not'%>'><%= el.name %></span>
+            
+                <span class="side">
+                    <form
+                    class="col-1"
+                    action="/names/markNameGiven/<%=el._id%>?_method=PUT"
+                    method="POST"
+                  >
+                    <button class="btn btn-primary fa fa-check fa-xs" type="submit"></button>
+                  </form>
+                </span>
+
+                <span class="side">
+                    <form
+                    class="col-1"
+                    action="/names/markNameIncomplete/<%=el._id%>?_method=PUT"
+                    method="POST"
+                  >
+                    <button class="btn btn-primary fa fa-square fa-xs" type="submit"></button>
+                  </form>
+                </span>
+
+                <span class="side">
+                    <form
+                    class="col-1"
+                    action="/names/deleteName/<%=el._id%>?_method=DELETE"
+                    method="POST"
+                  >
+                    <button class="btn btn-primary fa fa-trash fa-xs" type="submit"></button>
+                  </form>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <div class="mt-5">
+
+    <h3><%= user.userName %> has <%= left %> possible names left. </h3>
+
+    <form action="/names/addName/<%=nameList._id%>" method='POST'>
+        <input type="text" placeholder="Enter name" name='nameItem'>
+        <input type="submit">
+    </form>
+
+
+
+    <script src="/js/main.js"></script>
+
+  </div>
+
+</div>
+
+<%- include('partials/footer') -%>
+

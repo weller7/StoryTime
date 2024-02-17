@@ -1,0 +1,82 @@
+/* h1{
+    color: red;
+} */
+
+.given{
+    text-decoration: line-through;
+    color: gray;
+}
+.completed{
+    text-decoration: line-through;
+    color: gray;
+}
+.not{
+    text-decoration: underline;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+
+  .starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.space-below{
+    margin-bottom: 2rem;
+}
+
+
+
+/* features or home */
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+}
+  
+  .icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+}
+  
+.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
+.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+  
+
+.feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+}
+
+.link {
+    color: rgb(31, 31, 31);
+    text-decoration: none;
+
+}
+
+
+
+.side {
+   display: inline-block;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+}
+
+body{
+    padding-top: 5rem;
+    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
+   
+}

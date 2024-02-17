@@ -1,0 +1,56 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+
+        <h2 class="pb-2 border-bottom">Create new name list</h2>
+        <div class="mt-5">
+
+          <form action="/nameLists/createNameList" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+          </form>
+        </div>
+
+        <div class="mt-5">
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+
+          
+
+      </div>
+
+      <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<nameLists.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5"><h3> 
+            <a class="link" href="/nameLists/<%= nameLists[i]._id%>"><%= nameLists[i].titleOfNameList %> 
+            </a>
+            </h3>
+
+            <span>
+              <form
+              class="col-1"
+              action="/nameLists/deleteNameList/<%=nameLists[i]._id%>?_method=DELETE"
+              method="POST">
+              <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+            </span>
+
+          </li>
+        <% } %>
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary mb-2" href="/feed">Return to Feed</a>
+          <a class="btn btn-primary" href="/outlines">Return to Outlines</a>
+        </div>  
+      </div>  
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
