@@ -29,11 +29,15 @@ require("./config/passport")(passport);
 //Connect To Database
 connectDB();
 
-//Using EJS for views
-app.set("view engine", "ejs");
+  //Using EJS for views
+  //app.set("view engine", "ejs");
+  //Static Folder
+  //app.use(express.static("public"));
 
-//Static Folder
-app.use(express.static("public"));
+//Change for vercel deployment
+ app.set("views", __dirname + "/views");
+ app.set("view engine", "ejs");
+ app.use(express.static(__dirname + "public"));
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
